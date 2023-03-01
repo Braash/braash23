@@ -1,3 +1,19 @@
+# Braash personal project:
+
+This project is currently in development...
+
+The purpose of this project is to explore various parts of web development.
+
+## Reflection(premature)
+
+  - The purpose of this project is to explore various parts of web development.
+  - This repository will be used as an experimental environment and resource, which will help deepen my undestanding on all things related to Web development & Design. 
+ 
+  - What were some unexpected obstacles? 
+  - What tools did you use to implement this project?
+
+#### Example:  
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
