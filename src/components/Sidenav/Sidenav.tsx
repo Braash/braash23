@@ -4,17 +4,20 @@ import aboutImg from '../../assets/about.png'
 import homeImg from '../../assets/home.png'
 
 const Sidenav = ({children}: any) => {
+     // #region STATE
     const[isOpen ,setIsOpen] = useState(false);
+    // #endregion
+    
     const toggle = () => setIsOpen (!isOpen);
     const navigationItems = [
         {
             path: '/',
-            name: 'Home',
+            name: 'Dashboard',
             icon: homeImg,
 
         },
         {
-            path: '/About',
+            path: '/about',
             name: 'About',
             icon: aboutImg,
 

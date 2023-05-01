@@ -1,23 +1,23 @@
-import React from 'react';
 import './App.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Dashboard from './pages/Home';
-import About from './pages/About';
-import Sidenav from './components/Sidenav/Sidenav';
-import TopBar from './components/TopBar/TopBar';
+import { BrowserRouter} from 'react-router-dom';
+import { AuthProvider, useAuth } from "./context/AuthContext"
+import Navigation from './components/Navigation/Navigation'
 
-function App() {
+function App() {  
   return (
     <BrowserRouter>
-      <TopBar />
-      <Sidenav>
-        <Routes>
-          <Route path="/" element={<Dashboard />}/>
-          <Route path="/About" element={<About />}/>
-        </Routes>
-      </Sidenav>
+        <AuthProvider>
+            <Navigation />
+        </AuthProvider>
     </BrowserRouter>
   );
 }
 
 export default App;
+
+{/* <div className="flex items-center justify-center" style={{minHeight: '100vh'}}>
+      <div className="w-100" style={{maxWidth: '400px'}}>
+        <SignUp />
+        Hello
+      </div>
+    </div> */}

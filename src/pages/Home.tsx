@@ -21,7 +21,7 @@ const dashboardItems = [
 
 const Dashboard = () => {
   return (
-    <div className="flex flex-wrap justify-center items-center h-screen">
+    <div className="flex m-28 flex-wrap justify-center items-center h-screen">
       {dashboardItems.map((item, index) => (
         <div className="p-4 w-60" key={index}>
           <Card image={item.image} title={item.title} />
