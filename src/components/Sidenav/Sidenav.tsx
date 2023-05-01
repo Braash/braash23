@@ -9,12 +9,12 @@ const Sidenav = ({children}: any) => {
     const navigationItems = [
         {
             path: '/',
-            name: 'Home',
+            name: 'Dashboard',
             icon: homeImg,
 
         },
         {
-            path: '/About',
+            path: '/about',
             name: 'About',
             icon: aboutImg,
 
