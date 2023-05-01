@@ -9,9 +9,12 @@ export const useAuth = () => {
 }
 
 export const AuthProvider = ({ children }: any) => {
+  // #region STATE
   const [currentUser, setCurrentUser] = useState()
   const [loading, setLoading] = useState(true)
+  // #endregion
 
+  // #region FUNCTIONS
   const signUp = (authenticate: any, email: string, password: string) => {
     console.log(authenticate, email, password)
     return createUserWithEmailAndPassword(authenticate, email, password)
@@ -20,7 +23,9 @@ export const AuthProvider = ({ children }: any) => {
   const logIn = (authenticate: any, email: string, password: string) => {
     return signInWithEmailAndPassword(authenticate, email, password)
   }
+  // #endregion
 
+  // #region LIFECYCLE
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user: any) => {
       setCurrentUser(user)
@@ -29,6 +34,7 @@ export const AuthProvider = ({ children }: any) => {
 
     return unsubscribe
   }, [])
+  // #endregion
 
   const value = {
     currentUser,

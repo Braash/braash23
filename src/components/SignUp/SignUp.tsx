@@ -3,21 +3,26 @@ import { useAuth } from "../../context/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
 import { auth } from "../../firebase"
 import messages from './messages'
+import logoImg from '../../assets/logo.png'
 
 const SignUp = () => {
+  // #region HOOKS
   const emailRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
   const passwordConfirmRef = useRef<HTMLInputElement>(null);
-  
   const { signUp, currentUser } = useAuth();
-  console.log(currentUser, 'currenUser')
+  const navigate = useNavigate();
+  // #endregion
+  
+  // #region STATE
   const [error, setError] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
-  const navigate = useNavigate();
+  // #endregion
 
+  // #region FUNCTIONS
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>,) => {
     e.preventDefault();
-    console.log(auth)
+    console.log(auth, 'value auth')
     if (passwordRef?.current?.value !== passwordConfirmRef?.current?.value) {
       return setError("Passwords do not match");
     }
@@ -32,9 +37,14 @@ const SignUp = () => {
 
     setLoading(false);
   };
+  // #endregion
 
   return (
     <div className="flex flex-col items-center justify-center h-screen">
+      <div className="flex items-center flex-shrink-0 text-black ml-1 mr-6">
+            <img src={logoImg} className="pr-1 h-6" alt='Logo' />
+            <span className="font-semibold text-xl tracking-tight">{messages?.name}</span>
+      </div>
       <h2 className="text-center mb-4 text-2xl font-medium font-bold">{messages?.title}</h2>
       {currentUser && currentUser?.email}
       {error && <div className="alert alert-danger">{error}</div>}

@@ -1,18 +1,25 @@
 import React, { useRef, useState } from "react";
 import { useAuth } from "../../context/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
-import { auth } from "../../firebase"
+import { auth } from "../../firebase";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import messages from './messages'
+import messages from './messages';
+import logoImg from '../../assets/logo.png';
 
 const LogIn = () => {
+  // #region HOOKS
   const emailRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
   const { logIn, currentUser } = useAuth();
+  const navigate = useNavigate();
+  // #endregion
+
+  // #region STATE
   const [error, setError] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
-  const navigate = useNavigate();
+  // #endregion 
 
+  // #region FUNCTIONS
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
    
@@ -27,15 +34,19 @@ const LogIn = () => {
 
     setLoading(false);
   }
-
+  
   const handleGoogle = async () => {
-   const provider = await new GoogleAuthProvider();
-   return signInWithPopup(auth, provider);
+    const provider = await new GoogleAuthProvider();
+    return signInWithPopup(auth, provider);
   }
+  // #endregion
 
   return (
     <div className="flex flex-col items-center justify-center h-screen">
       <div className="w-full max-w-md">
+      <div className="flex items-center justify-center">
+            <img src={logoImg} className="pr-1 justify-center h-6" alt='Logo' />
+      </div>
         <h2 className="text-center text-2xl mb-4">{messages?.title}</h2>
         {currentUser && currentUser?.email}
         {error && <div className="bg-red-100 text-red-700 py-2 px-4 mb-4">{error}</div>}

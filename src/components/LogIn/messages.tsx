@@ -6,6 +6,7 @@ interface LogInMessages {
     signUpButtonCopy: string;
     needAnAccountCopy: string;
     signUpCopy: string;
+    name: string;
 }
 
 const messages: LogInMessages = {
@@ -15,7 +16,8 @@ const messages: LogInMessages = {
     signInWithGoogleButtonCopy: 'Sign in with Google',
     signUpButtonCopy: 'Sign up',
     needAnAccountCopy: 'Need an account?',
-    signUpCopy: 'Sign up'
+    signUpCopy: 'Sign up',
+    name: 'BRALE',
 };
 
 export default messages;

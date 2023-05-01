@@ -15,7 +15,7 @@ export type SidenavViewProps = {
     children: any;
 };
 
-const SidenavView = ({navigationItems, toggle, isOpen, children}: SidenavViewProps) => {
+const SidenavView = ({navigationItems, toggle, isOpen}: SidenavViewProps) => {
     return (
         <div className="flex">
             <div id="sidebar" style={{width: isOpen ? "100px" : "50px"}} className="bg-gray-800 mt-10 fixed h-screen p-2">
@@ -32,10 +32,7 @@ const SidenavView = ({navigationItems, toggle, isOpen, children}: SidenavViewPro
                         ))
                     }
                 </div>
-            </div>
-            <div>
-                <div id="main" style={{paddingLeft: isOpen ? "100px" : "50px"}} className="w-full mt-10">{children}</div>
-            </div>   
+            </div> 
         </div>
     );
 };

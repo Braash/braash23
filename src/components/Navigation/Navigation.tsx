@@ -10,18 +10,18 @@ import TopBar from '../TopBar/TopBar'
 
 const Navigation = () => {
     const { currentUser } = useAuth();
-  return (
-    <div>
-        {currentUser && <TopBar />}
-        {currentUser && <Sidenav />}
-        <Routes>
-              {currentUser ? <Route path="/" element={<Dashboard />} /> : <Route path="/" element={<LogIn />} /> }
-              <Route path="/about" element={<About />} />
-              <Route path="/signup" element={<SignUp />} />
-              <Route path="/login" element={<LogIn />} />
-        </Routes>
-    </div>
-  )
+    return (
+        <div>
+                {currentUser && <TopBar />}
+                {currentUser && <Sidenav />}
+            <Routes>
+                {currentUser ? <Route path="/" element={<Dashboard />} /> : <Route path="/" element={<LogIn />} /> }
+                <Route path="/about" element={<About />} />
+                <Route path="/signup" element={<SignUp />} />
+                <Route path="/login" element={<LogIn />} />
+            </Routes>
+        </div>
+    )
 };
 
 export default Navigation;
