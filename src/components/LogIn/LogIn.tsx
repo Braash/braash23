@@ -10,7 +10,7 @@ const LogIn = () => {
   // #region HOOKS
   const emailRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
-  const { logIn, currentUser } = useAuth();
+  const { logIn, signInWithGoogle, currentUser } = useAuth();
   const navigate = useNavigate();
   // #endregion
 
@@ -36,8 +36,8 @@ const LogIn = () => {
   }
   
   const handleGoogle = async () => {
-    const provider = await new GoogleAuthProvider();
-    return signInWithPopup(auth, provider);
+    await signInWithGoogle();
+    navigate("/");
   }
   // #endregion
 

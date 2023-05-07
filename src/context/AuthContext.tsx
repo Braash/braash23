@@ -1,6 +1,7 @@
-import React, { useContext, useState, useEffect } from "react"
-import { auth } from "../firebase"
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
+import React, { useContext, useState, useEffect } from "react";
+import { auth } from "../firebase";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "firebase/auth";
 
 const AuthContext = React.createContext<any>('')
 
@@ -23,6 +24,16 @@ export const AuthProvider = ({ children }: any) => {
   const logIn = (authenticate: any, email: string, password: string) => {
     return signInWithEmailAndPassword(authenticate, email, password)
   }
+
+  const signInWithGoogle = async () => {
+    const provider = await new GoogleAuthProvider();
+    return signInWithPopup(auth, provider);
+  }
+
+  const logOut = (authenticate: any) => {
+    return signOut(authenticate);
+  }
+ 
   // #endregion
 
   // #region LIFECYCLE
@@ -39,7 +50,9 @@ export const AuthProvider = ({ children }: any) => {
   const value = {
     currentUser,
     signUp,
-    logIn
+    logIn,
+    signInWithGoogle,
+    logOut
   }
 
   return (

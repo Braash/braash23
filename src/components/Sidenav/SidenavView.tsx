@@ -18,7 +18,7 @@ export type SidenavViewProps = {
 const SidenavView = ({navigationItems, toggle, isOpen}: SidenavViewProps) => {
     return (
         <div className="flex">
-            <div id="sidebar" style={{width: isOpen ? "100px" : "50px"}} className="bg-gray-800 mt-10 fixed h-screen p-2">
+            <div id="sidebar" style={{width: isOpen ? "100px" : "50px"}} className="bg-gray-600 mt-10 fixed h-screen p-2">
                 <div className="items-center flex justify-center">
                     <img src={barsImg} onClick={() => toggle()} className="h-6 object-cover" alt='Logo' />
                 </div>

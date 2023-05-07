@@ -4,16 +4,28 @@ import { useAuth } from '../../context/AuthContext';
 import About from '../../pages/About';
 import Dashboard from '../../pages/Home';
 import LogIn from '../LogIn/LogIn';
-import Sidenav from '../Sidenav/Sidenav'
+import Sidenav from '../Sidenav/Sidenav';
+import SideBar from '../SideBar/SideBar'
 import SignUp from '../SignUp/SignUp';
-import TopBar from '../TopBar/TopBar'
+import TopBar from '../TopBar/TopBar';
 
 const Navigation = () => {
     const { currentUser } = useAuth();
+    console.log(currentUser, 'value currentUser');
     return (
         <div>
                 {currentUser && <TopBar />}
-                {currentUser && <Sidenav />}
+                {currentUser && 
+                    <>
+                        <div className="hidden md:block">
+                            <Sidenav />
+                        </div>
+                        <div className="md:hidden">
+                            <SideBar />
+                        </div>
+                    </>
+                    
+                }
             <Routes>
                 {currentUser ? <Route path="/" element={<Dashboard />} /> : <Route path="/" element={<LogIn />} /> }
                 <Route path="/about" element={<About />} />
@@ -22,6 +34,6 @@ const Navigation = () => {
             </Routes>
         </div>
     )
-};
+};  
 
 export default Navigation;
