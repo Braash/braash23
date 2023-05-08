@@ -55,13 +55,13 @@ const LogIn = () => {
             <label>
                 {messages?.emailLabel}
             </label>
-            <input type="email" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" ref={emailRef} required />
+            <input id="email" type="email" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" ref={emailRef} required />
           </div>
           <div className="mb-6">
             <label>
                 {messages?.passwordLabel}
             </label>
-            <input type="password" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" ref={passwordRef} required />
+            <input id="password" type="password" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" ref={passwordRef} required />
           </div>
           <button disabled={loading} className="bg-gray-200 rounded-md py-2 px-4 w-full max-w-md" type="submit">
             {messages?.title}

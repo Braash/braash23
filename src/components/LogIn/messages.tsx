@@ -10,7 +10,7 @@ interface LogInMessages {
 }
 
 const messages: LogInMessages = {
-    title: 'Log In',
+    title: 'Log in',
     emailLabel: 'Email',
     passwordLabel: 'Password',
     signInWithGoogleButtonCopy: 'Sign in with Google',

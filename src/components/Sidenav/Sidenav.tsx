@@ -3,7 +3,7 @@ import SidenavView from './SidenavView';
 import aboutImg from '../../assets/about.png'
 import homeImg from '../../assets/home.png'
 
-const Sidenav = ({children}: any) => {
+const Sidenav = () => {
      // #region STATE
     const[isOpen ,setIsOpen] = useState(false);
     // #endregion
@@ -27,7 +27,6 @@ const Sidenav = ({children}: any) => {
         <div>
             <SidenavView
                 navigationItems={navigationItems}
-                children={children}
                 isOpen={isOpen}
                 toggle={toggle}
             />

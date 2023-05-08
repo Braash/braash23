@@ -10,7 +10,7 @@ interface SignUpMessages {
 }
 
 const messages: SignUpMessages = {
-    title: 'Sign Up',
+    title: 'Sign up',
     emailLabel: 'Email',
     passwordLabel: 'Password',
     passwordConfirmationLabel:'Password confirmation',

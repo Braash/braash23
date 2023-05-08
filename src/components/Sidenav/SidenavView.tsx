@@ -12,7 +12,6 @@ export type SidenavViewProps = {
     navigationItems: NavigationItems[];
     toggle: Function;
     isOpen: boolean;
-    children: any;
 };
 
 const SidenavView = ({navigationItems, toggle, isOpen}: SidenavViewProps) => {

@@ -48,7 +48,8 @@
     ]
   },
   "devDependencies": {
+    "@storybook/react": "^7.0.9",
     "@types/firebase": "^3.2.1",
-    "cypress": "^12.5.1"
+    "cypress": "^12.11.0"
   }
 }
