@@ -22,7 +22,7 @@ const TopBarView = ({currentUser, logOut, error, loading}: any) => {
             {currentUser ? avatar :
             <Link to="/login" className="font-bold text-gray-500"><button className="bg-gray-200 rounded-md mr-4 px-3">Log in</button></Link>
             }
-            {currentUser && <button onClick={() => logOut()} className="border border-gray-500 text-sm text-gray-500 hover:bg-gray-500 hover:text-white font-bold px-4 rounded">Logout</button>}
+            {currentUser && <button onClick={() => logOut()} className="border border-gray-500 text-sm text-gray-500 hover:bg-gray-500 hover:text-white font-bold px-4 rounded">Log out</button>}
           </div>
         </nav>
       );

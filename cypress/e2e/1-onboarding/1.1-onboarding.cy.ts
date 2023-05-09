@@ -31,10 +31,8 @@ describe('Onboarding', () => {
         })
     })
 
-    describe('Log in', () => {
-        
-
-        it('should have an App store button', () => {
+    describe('LOG IN', () => {
+        it('Log in to BRALE', () => {
             // cy.get('#button/login/get-app').click();
             cy.get('#email')
                 .type(loginEmail)
@@ -48,6 +46,29 @@ describe('Onboarding', () => {
                 .click()
 
             cy.wait(3000)
+        });
+    })
+
+    describe('LOG OUT', () => {
+        it('Log out of the BRALE application', () => {
+            // cy.get('#button/login/get-app').click();
+            cy.get('button')
+                .contains('Log out')
+                .first()
+                .should('be.visible')
+                .click()
+                
+            cy.wait(3000)
+        });
+    })
+
+    describe('SIGN UP', () => {
+        it('and on the BRALE sign up screen', () => {
+            // cy.get('#button/login/get-app').click();
+            cy.get('#signup')
+                .click()
+                
+            cy.wait(2000)
         });
     })
 

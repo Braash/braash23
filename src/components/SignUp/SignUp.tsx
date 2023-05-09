@@ -51,15 +51,15 @@ const SignUp = () => {
       <form className="flex flex-col justify-center items-center w-full" onSubmit={handleSubmit}>
         <div className="form-group mb-4 w-full max-w-md">
           <label>{messages?.emailLabel}</label>
-          <input id="email" type="email" className="rounded-md border-gray-400 border p-2 w-full" ref={emailRef} required />
+          <input data-testid="email" id="email" type="email" className="rounded-md border-gray-400 border p-2 w-full" ref={emailRef} required />
         </div>
         <div className="form-group mb-4 w-full max-w-md">
           <label>{messages?.passwordLabel}</label>
-          <input id="password" type="password" className="rounded-md border-gray-400 border p-2 w-full" ref={passwordRef} required />
+          <input data-testid="password" id="password" type="password" className="rounded-md border-gray-400 border p-2 w-full" ref={passwordRef} required />
         </div>
         <div className="form-group mb-4 w-full max-w-md">
           <label>{messages?.passwordConfirmationLabel}</label>
-          <input type="password" className="rounded-md border-gray-400 border p-2 w-full" ref={passwordConfirmRef} required />
+          <input data-testid="password-confirmation" type="password" className="rounded-md border-gray-400 border p-2 w-full" ref={passwordConfirmRef} required />
         </div>
         <button disabled={loading} className="bg-gray-200 rounded-md py-2 px-4 w-full max-w-md" type="submit">
           {messages?.title}

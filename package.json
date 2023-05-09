@@ -50,6 +50,8 @@
   "devDependencies": {
     "@storybook/react": "^7.0.9",
     "@types/firebase": "^3.2.1",
-    "cypress": "^12.11.0"
+    "chromatic": "^6.17.4",
+    "cypress": "^12.11.0",
+    "react-test-renderer": "^18.2.0"
   }
 }
