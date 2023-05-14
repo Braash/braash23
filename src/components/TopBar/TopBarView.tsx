@@ -15,7 +15,7 @@ const TopBarView = ({currentUser, logOut, error, loading}: any) => {
           <Link to="/">
           <div className="flex items-center flex-shrink-0 text-black ml-1 mr-6">
             <img src={logoImg} className="pr-1 h-6" alt='Logo' />
-            <span className="font-semibold text-md tracking-tight">{messages?.name}</span>
+            <span className="font-semibold text-md tracking-tight">{messages?.name} 2</span>
           </div>
           </Link>
           <div className="flex">
