@@ -26,6 +26,7 @@ const SideBarView = ({ navigationItems, toggle, isOpen }: SideBarViewProps) => {
               onClick={() => toggle()}
               className="h-6 object-cover bg-transparent"
               alt="Logo"
+              data-testid="logo-img"
             />
           </div>
           {isOpen && <div>

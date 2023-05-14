@@ -5,6 +5,8 @@ import { auth } from "../../firebase"
 import messages from './messages'
 import logoImg from '../../assets/logo.png'
 
+export const passwordValidation = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+
 const SignUp = () => {
   // #region HOOKS
   const emailRef = useRef<HTMLInputElement>(null);
@@ -22,9 +24,12 @@ const SignUp = () => {
   // #region FUNCTIONS
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>,) => {
     e.preventDefault();
-    console.log(auth, 'value auth')
     if (passwordRef?.current?.value !== passwordConfirmRef?.current?.value) {
       return setError("Passwords do not match");
+    }
+    
+    if (!passwordValidation.test(passwordRef?.current?.value as string)) {
+      return setError("Password should contain at least 8 characters, one uppercase letter, and one number");
     }
     try {
       setError("");
@@ -42,8 +47,8 @@ const SignUp = () => {
   return (
     <div className="flex flex-col items-center justify-center h-screen">
       <div className="flex items-center flex-shrink-0 text-black ml-1 mr-6">
-            <img src={logoImg} className="pr-1 h-6" alt='Logo' />
-            <span className="font-semibold text-xl tracking-tight">{messages?.name}</span>
+        <img src={logoImg} className="pr-1 h-6" alt='Logo' />
+        <span className="font-semibold text-xl tracking-tight">{messages?.name}</span>
       </div>
       <h2 className="text-center mb-4 text-2xl font-medium font-bold">{messages?.title}</h2>
       {currentUser && currentUser?.email}
@@ -64,7 +69,6 @@ const SignUp = () => {
         <button disabled={loading} className="bg-gray-200 rounded-md py-2 px-4 w-full max-w-md" type="submit">
           {messages?.title}
         </button>
-
       </form>
       <div className="w-full text-center mt-2">
         {messages?.alreadyHaveAnAccountCopy} <Link to="/login" className="font-bold text-gray-500">{messages?.logInCopy}</Link>

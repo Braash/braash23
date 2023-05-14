@@ -2,6 +2,8 @@ import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import SignUp from '../SignUp';
 import { BrowserRouter } from 'react-router-dom';
+import { passwordValidation } from '../SignUp';
+import messages from '../messages';
 
 describe('SignUp component', () => {
   it('should show an error message if an invalid email is entered', async () => {
@@ -37,4 +39,34 @@ describe('SignUp component', () => {
     fireEvent.change(passwordConfirmInput, { target: { value: 'apple93' } });
     fireEvent.click(submitButton);
   });
+});
+
+describe('Password validation', () => {
+  test('Returns true for a valid password', () => {
+    expect(passwordValidation.test('Aventador93')).toBe(true);
+  });
+
+  test('Returns false for password with less than 8 characters', () => {
+    expect(passwordValidation.test('Apple')).toBe(false);
+  });
+
+  test('Returns false for password without an uppercase letter', () => {
+    expect(passwordValidation.test('orange')).toBe(false);
+  });
+
+  test('Returns false for password without a lowercase letter', () => {
+    expect(passwordValidation.test('ABC12345')).toBe(false);
+  });
+
+  test('Returns false for password without a number', () => {
+    expect(passwordValidation.test('Abcdefgh')).toBe(false);
+  });
+});
+
+
+describe('MyComponent', () => {
+    it('renders correctly', () => {
+      render(<BrowserRouter><SignUp /></BrowserRouter>);
+      expect(screen.getByText('Already have an account?')).toBeInTheDocument();
+    });
 });
