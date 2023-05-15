@@ -71,7 +71,7 @@ const LogIn = () => {
             {messages?.signInWithGoogleButtonCopy}
           </button>
         <div className="mt-4 text-center">
-            {messages?.needAnAccountCopy}<Link to="/signup" id="signup" className="font-bold text-gray-500">{messages?.signUpCopy}</Link>
+            {messages?.needAnAccountCopy}<Link to="/signup" id="signup" className="font-bold text-gray-500">{' '}{messages?.signUpCopy}</Link>
         </div>
       </div>
     </div>
