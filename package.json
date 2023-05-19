@@ -31,7 +31,8 @@
     "eject": "react-scripts eject",
     "build-storybook": "storybook build",
     "storybook": "storybook dev -p 6006",
-    "chromatic": "npx chromatic --project-token=chpt_7e7ad0da7e71a36"
+    "chromatic": "npx chromatic --project-token=chpt_7e7ad0da7e71a36",
+    "cypress": "cypress open --config-file=cypress.config.ts"
   },
   "eslintConfig": {
     "extends": [
