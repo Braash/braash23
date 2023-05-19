@@ -2,7 +2,6 @@ import React, { useRef, useState } from "react";
 import { useAuth } from "../../context/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
 import { auth } from "../../firebase";
-import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import messages from './messages';
 import logoImg from '../../assets/logo.png';
 

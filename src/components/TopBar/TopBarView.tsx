@@ -1,7 +1,6 @@
 import React  from 'react';
 import { Link } from 'react-router-dom';
 import logoImg from '../../assets/logo.png'
-import { useAuth } from '../../context/AuthContext';
 import messages from './messages'
 
 const TopBarView = ({currentUser, logOut, error, loading}: any) => {
