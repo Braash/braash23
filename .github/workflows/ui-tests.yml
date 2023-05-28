@@ -3,13 +3,9 @@ name: 'UI Tests'
 
 on: push
 
-# .github/workflows/storybook-tests.yml
-
-name: 'Storybook Tests'
-on: push
 jobs:
-  test:
-    timeout-minutes: 60
+  # Run interaction and accessibility tests
+  interaction-and-accessibility:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
