@@ -3,9 +3,13 @@ name: 'UI Tests'
 
 on: push
 
+# .github/workflows/storybook-tests.yml
+
+name: 'Storybook Tests'
+on: push
 jobs:
-  # Run interaction and accessibility tests
-  interaction-and-accessibility:
+  test:
+    timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -16,8 +20,6 @@ jobs:
         run: yarn
       - name: Install Playwright
         run: npx playwright install --with-deps
-      - name: Run Storybook tests
-        run: yarn test-storybook
       - name: Build Storybook
         run: yarn build-storybook --quiet
       - name: Serve Storybook and run tests
