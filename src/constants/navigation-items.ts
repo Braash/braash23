@@ -1,5 +1,3 @@
-import React, { useState }  from 'react';
-import SidenavView from './SidenavView';
 import aboutImg from '../../assets/about.png';
 import homeImg from '../../assets/home.png';
 import gamesImg from '../../assets/games.png';
@@ -39,21 +37,4 @@ const navigationItems = [
     },
 ]
 
-const Sidenav = () => {
-     // #region STATE
-    const[isOpen ,setIsOpen] = useState(false);
-    // #endregion
-    
-    const toggle = () => setIsOpen (!isOpen);
-    return (
-        <div>
-            <SidenavView
-                navigationItems={navigationItems}
-                isOpen={isOpen}
-                toggle={toggle}
-            />
-        </div>
-    );
-};
-
-export default Sidenav;
+export default navigationItems;
